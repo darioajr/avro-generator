@@ -1,0 +1,46 @@
+{
+  "namespace": "br.com.b3.poc.generate.avro.app.model.avro.meuregistro",
+  "type": "record",
+  "name": "MeuRegistro",
+  "fields": [
+    {"name": "id", "type": "long"},
+    {"name": "nome", "type": "string"},
+    {"name": "idade", "type": ["null", "int"], "default": null},
+    {"name": "dataNascimento", "type": ["null", {"type": "int", "logicalType": "date"}], "default": null},
+    {"name": "dataHoraCadastro", "type": ["null", {"type": "long", "logicalType": "timestamp-millis"}], "default": null},
+    {"name": "dataHoraUltimaAtualizacao", "type": ["null", {"type": "long", "logicalType": "timestamp-millis"}], "default": null},
+    {
+      "name": "status",
+      "type": ["null", {
+        "type": "enum",
+        "name": "Status",
+        "symbols": ["ATIVO", "INATIVO"]
+      }],"default": null
+    },
+    {
+      "name": "endereco",
+      "type": ["null", {
+        "type": "record",
+        "name": "Endereco",
+        "fields": [
+          {"name": "rua", "type": "string"},
+          {"name": "cidade", "type": "string"},
+          {"name": "cep", "type": "string"}
+        ]
+      }], "default": null
+    },
+    {"name": "interesses", "type": ["null", {"type": "array", "items": "string"}], "default": null},
+    {"name": "informacoesExtras", "type": ["null", {"type": "map", "values": "string"}], "default": null},
+    {"name": "tipo", "type": ["null", "int"], "logicalType": "Tipo", "default": null},
+    {"name": "CPF", "type": "string"}
+  ],
+  "logicalTypes": [
+    {
+      "name": "Tipo",
+      "type": "int",
+      "doc": "Representa o tipo de 1 a 10",
+      "minimum": 1,
+      "maximum": 10
+    }
+  ]
+}
