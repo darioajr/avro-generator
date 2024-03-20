@@ -12,12 +12,13 @@ import org.apache.avro.message.BinaryMessageEncoder;
 import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
+@jakarta.annotation.Generated("dario")
 @org.apache.avro.specific.AvroGenerated
 public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2123794222938031985L;
+  private static final long serialVersionUID = -5963827070545389414L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MeuRegistro\",\"namespace\":\"br.com.b3.poc.generate.avro.app.model.avro.meuregistro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"nome\",\"type\":\"string\"},{\"name\":\"idade\",\"type\":[\"null\",\"int\"],\"default\":null},{\"name\":\"dataNascimento\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"dataHoraCadastro\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"dataHoraUltimaAtualizacao\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Status\",\"symbols\":[\"ATIVO\",\"INATIVO\"]}],\"default\":null},{\"name\":\"endereco\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Endereco\",\"fields\":[{\"name\":\"rua\",\"type\":\"string\"},{\"name\":\"cidade\",\"type\":\"string\"},{\"name\":\"cep\",\"type\":\"string\"}]}],\"default\":null},{\"name\":\"interesses\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"default\":null},{\"name\":\"informacoesExtras\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"string\"}],\"default\":null},{\"name\":\"tipo\",\"type\":[\"null\",\"int\"],\"default\":null,\"logicalType\":\"Tipo\"},{\"name\":\"CPF\",\"type\":\"string\"}],\"logicalTypes\":[{\"name\":\"Tipo\",\"type\":\"int\",\"doc\":\"Representa o tipo de 1 a 10\",\"minimum\":1,\"maximum\":10}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"MeuRegistro\",\"namespace\":\"br.com.b3.poc.generate.avro.app.model.avro.meuregistro\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"nome\",\"type\":\"string\"},{\"name\":\"idade\",\"type\":[\"null\",\"int\"],\"default\":null,\"javaAnnotation\":\"jakarta.validation.constraints.Min(value=1) @jakarta.validation.constraints.Max(value=150)\"},{\"name\":\"dataNascimento\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"dataHoraCadastro\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"dataHoraUltimaAtualizacao\",\"type\":[\"null\",{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}],\"default\":null},{\"name\":\"status\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Status\",\"symbols\":[\"ATIVO\",\"INATIVO\"]}],\"default\":null,\"javaAnnotation\":\"jakarta.annotation.Generated(\\\"dario\\\")\"},{\"name\":\"statusnovo\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"AtivoOuInativo\",\"doc\":\"Representa  ATIVO ou INATIVO\",\"symbols\":[\"ATIVO\",\"INATIVO\"]}],\"default\":null},{\"name\":\"statusantigo\",\"type\":[\"null\",\"AtivoOuInativo\"],\"default\":null},{\"name\":\"endereco\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"Endereco\",\"fields\":[{\"name\":\"rua\",\"type\":\"string\"},{\"name\":\"cidade\",\"type\":\"string\"},{\"name\":\"cep\",\"type\":\"string\"}]}],\"default\":null},{\"name\":\"interesses\",\"type\":[\"null\",{\"type\":\"array\",\"items\":\"string\"}],\"default\":null},{\"name\":\"informacoesExtras\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"string\"}],\"default\":null},{\"name\":\"tipo\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"Inteiro1A10\"}],\"default\":null,\"javaAnnotation\":\"jakarta.annotation.Generated(\\\"dario\\\")\"},{\"name\":\"CPF\",\"type\":\"string\"}],\"javaAnnotation\":\"jakarta.annotation.Generated(\\\"dario\\\")\"}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -79,14 +80,19 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
 
   private long id;
   private java.lang.CharSequence nome;
+  @jakarta.validation.constraints.Min(value=1) @jakarta.validation.constraints.Max(value=150)
   private java.lang.Integer idade;
   private java.time.LocalDate dataNascimento;
   private java.time.Instant dataHoraCadastro;
   private java.time.Instant dataHoraUltimaAtualizacao;
+  @jakarta.annotation.Generated("dario")
   private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status status;
+  private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusnovo;
+  private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusantigo;
   private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco endereco;
   private java.util.List<java.lang.CharSequence> interesses;
   private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> informacoesExtras;
+  @jakarta.annotation.Generated("dario")
   private java.lang.Integer tipo;
   private java.lang.CharSequence CPF;
 
@@ -106,13 +112,15 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
    * @param dataHoraCadastro The new value for dataHoraCadastro
    * @param dataHoraUltimaAtualizacao The new value for dataHoraUltimaAtualizacao
    * @param status The new value for status
+   * @param statusnovo The new value for statusnovo
+   * @param statusantigo The new value for statusantigo
    * @param endereco The new value for endereco
    * @param interesses The new value for interesses
    * @param informacoesExtras The new value for informacoesExtras
    * @param tipo The new value for tipo
    * @param CPF The new value for CPF
    */
-  public MeuRegistro(java.lang.Long id, java.lang.CharSequence nome, java.lang.Integer idade, java.time.LocalDate dataNascimento, java.time.Instant dataHoraCadastro, java.time.Instant dataHoraUltimaAtualizacao, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status status, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco endereco, java.util.List<java.lang.CharSequence> interesses, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> informacoesExtras, java.lang.Integer tipo, java.lang.CharSequence CPF) {
+  public MeuRegistro(java.lang.Long id, java.lang.CharSequence nome, java.lang.Integer idade, java.time.LocalDate dataNascimento, java.time.Instant dataHoraCadastro, java.time.Instant dataHoraUltimaAtualizacao, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status status, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusnovo, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusantigo, br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco endereco, java.util.List<java.lang.CharSequence> interesses, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> informacoesExtras, java.lang.Integer tipo, java.lang.CharSequence CPF) {
     this.id = id;
     this.nome = nome;
     this.idade = idade;
@@ -120,6 +128,8 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     this.dataHoraCadastro = dataHoraCadastro;
     this.dataHoraUltimaAtualizacao = dataHoraUltimaAtualizacao;
     this.status = status;
+    this.statusnovo = statusnovo;
+    this.statusantigo = statusantigo;
     this.endereco = endereco;
     this.interesses = interesses;
     this.informacoesExtras = informacoesExtras;
@@ -144,11 +154,13 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     case 4: return dataHoraCadastro;
     case 5: return dataHoraUltimaAtualizacao;
     case 6: return status;
-    case 7: return endereco;
-    case 8: return interesses;
-    case 9: return informacoesExtras;
-    case 10: return tipo;
-    case 11: return CPF;
+    case 7: return statusnovo;
+    case 8: return statusantigo;
+    case 9: return endereco;
+    case 10: return interesses;
+    case 11: return informacoesExtras;
+    case 12: return tipo;
+    case 13: return CPF;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -165,11 +177,13 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     case 4: dataHoraCadastro = (java.time.Instant)value$; break;
     case 5: dataHoraUltimaAtualizacao = (java.time.Instant)value$; break;
     case 6: status = (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status)value$; break;
-    case 7: endereco = (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco)value$; break;
-    case 8: interesses = (java.util.List<java.lang.CharSequence>)value$; break;
-    case 9: informacoesExtras = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
-    case 10: tipo = (java.lang.Integer)value$; break;
-    case 11: CPF = (java.lang.CharSequence)value$; break;
+    case 7: statusnovo = (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo)value$; break;
+    case 8: statusantigo = (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo)value$; break;
+    case 9: endereco = (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco)value$; break;
+    case 10: interesses = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 11: informacoesExtras = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
+    case 12: tipo = (java.lang.Integer)value$; break;
+    case 13: CPF = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -291,6 +305,40 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
    */
   public void setStatus(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status value) {
     this.status = value;
+  }
+
+  /**
+   * Gets the value of the 'statusnovo' field.
+   * @return The value of the 'statusnovo' field.
+   */
+  public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo getStatusnovo() {
+    return statusnovo;
+  }
+
+
+  /**
+   * Sets the value of the 'statusnovo' field.
+   * @param value the value to set.
+   */
+  public void setStatusnovo(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo value) {
+    this.statusnovo = value;
+  }
+
+  /**
+   * Gets the value of the 'statusantigo' field.
+   * @return The value of the 'statusantigo' field.
+   */
+  public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo getStatusantigo() {
+    return statusantigo;
+  }
+
+
+  /**
+   * Sets the value of the 'statusantigo' field.
+   * @param value the value to set.
+   */
+  public void setStatusantigo(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo value) {
+    this.statusantigo = value;
   }
 
   /**
@@ -426,6 +474,8 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     private java.time.Instant dataHoraCadastro;
     private java.time.Instant dataHoraUltimaAtualizacao;
     private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status status;
+    private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusnovo;
+    private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo statusantigo;
     private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco endereco;
     private br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco.Builder enderecoBuilder;
     private java.util.List<java.lang.CharSequence> interesses;
@@ -472,28 +522,36 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
         this.status = data().deepCopy(fields()[6].schema(), other.status);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
-      if (isValidValue(fields()[7], other.endereco)) {
-        this.endereco = data().deepCopy(fields()[7].schema(), other.endereco);
+      if (isValidValue(fields()[7], other.statusnovo)) {
+        this.statusnovo = data().deepCopy(fields()[7].schema(), other.statusnovo);
         fieldSetFlags()[7] = other.fieldSetFlags()[7];
+      }
+      if (isValidValue(fields()[8], other.statusantigo)) {
+        this.statusantigo = data().deepCopy(fields()[8].schema(), other.statusantigo);
+        fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      }
+      if (isValidValue(fields()[9], other.endereco)) {
+        this.endereco = data().deepCopy(fields()[9].schema(), other.endereco);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
       if (other.hasEnderecoBuilder()) {
         this.enderecoBuilder = br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco.newBuilder(other.getEnderecoBuilder());
       }
-      if (isValidValue(fields()[8], other.interesses)) {
-        this.interesses = data().deepCopy(fields()[8].schema(), other.interesses);
-        fieldSetFlags()[8] = other.fieldSetFlags()[8];
-      }
-      if (isValidValue(fields()[9], other.informacoesExtras)) {
-        this.informacoesExtras = data().deepCopy(fields()[9].schema(), other.informacoesExtras);
-        fieldSetFlags()[9] = other.fieldSetFlags()[9];
-      }
-      if (isValidValue(fields()[10], other.tipo)) {
-        this.tipo = data().deepCopy(fields()[10].schema(), other.tipo);
+      if (isValidValue(fields()[10], other.interesses)) {
+        this.interesses = data().deepCopy(fields()[10].schema(), other.interesses);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
       }
-      if (isValidValue(fields()[11], other.CPF)) {
-        this.CPF = data().deepCopy(fields()[11].schema(), other.CPF);
+      if (isValidValue(fields()[11], other.informacoesExtras)) {
+        this.informacoesExtras = data().deepCopy(fields()[11].schema(), other.informacoesExtras);
         fieldSetFlags()[11] = other.fieldSetFlags()[11];
+      }
+      if (isValidValue(fields()[12], other.tipo)) {
+        this.tipo = data().deepCopy(fields()[12].schema(), other.tipo);
+        fieldSetFlags()[12] = other.fieldSetFlags()[12];
+      }
+      if (isValidValue(fields()[13], other.CPF)) {
+        this.CPF = data().deepCopy(fields()[13].schema(), other.CPF);
+        fieldSetFlags()[13] = other.fieldSetFlags()[13];
       }
     }
 
@@ -531,26 +589,34 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
         this.status = data().deepCopy(fields()[6].schema(), other.status);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.endereco)) {
-        this.endereco = data().deepCopy(fields()[7].schema(), other.endereco);
+      if (isValidValue(fields()[7], other.statusnovo)) {
+        this.statusnovo = data().deepCopy(fields()[7].schema(), other.statusnovo);
         fieldSetFlags()[7] = true;
       }
-      this.enderecoBuilder = null;
-      if (isValidValue(fields()[8], other.interesses)) {
-        this.interesses = data().deepCopy(fields()[8].schema(), other.interesses);
+      if (isValidValue(fields()[8], other.statusantigo)) {
+        this.statusantigo = data().deepCopy(fields()[8].schema(), other.statusantigo);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.informacoesExtras)) {
-        this.informacoesExtras = data().deepCopy(fields()[9].schema(), other.informacoesExtras);
+      if (isValidValue(fields()[9], other.endereco)) {
+        this.endereco = data().deepCopy(fields()[9].schema(), other.endereco);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.tipo)) {
-        this.tipo = data().deepCopy(fields()[10].schema(), other.tipo);
+      this.enderecoBuilder = null;
+      if (isValidValue(fields()[10], other.interesses)) {
+        this.interesses = data().deepCopy(fields()[10].schema(), other.interesses);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.CPF)) {
-        this.CPF = data().deepCopy(fields()[11].schema(), other.CPF);
+      if (isValidValue(fields()[11], other.informacoesExtras)) {
+        this.informacoesExtras = data().deepCopy(fields()[11].schema(), other.informacoesExtras);
         fieldSetFlags()[11] = true;
+      }
+      if (isValidValue(fields()[12], other.tipo)) {
+        this.tipo = data().deepCopy(fields()[12].schema(), other.tipo);
+        fieldSetFlags()[12] = true;
+      }
+      if (isValidValue(fields()[13], other.CPF)) {
+        this.CPF = data().deepCopy(fields()[13].schema(), other.CPF);
+        fieldSetFlags()[13] = true;
       }
     }
 
@@ -834,6 +900,86 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     }
 
     /**
+      * Gets the value of the 'statusnovo' field.
+      * @return The value.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo getStatusnovo() {
+      return statusnovo;
+    }
+
+
+    /**
+      * Sets the value of the 'statusnovo' field.
+      * @param value The value of 'statusnovo'.
+      * @return This builder.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setStatusnovo(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo value) {
+      validate(fields()[7], value);
+      this.statusnovo = value;
+      fieldSetFlags()[7] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'statusnovo' field has been set.
+      * @return True if the 'statusnovo' field has been set, false otherwise.
+      */
+    public boolean hasStatusnovo() {
+      return fieldSetFlags()[7];
+    }
+
+
+    /**
+      * Clears the value of the 'statusnovo' field.
+      * @return This builder.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearStatusnovo() {
+      statusnovo = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'statusantigo' field.
+      * @return The value.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo getStatusantigo() {
+      return statusantigo;
+    }
+
+
+    /**
+      * Sets the value of the 'statusantigo' field.
+      * @param value The value of 'statusantigo'.
+      * @return This builder.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setStatusantigo(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo value) {
+      validate(fields()[8], value);
+      this.statusantigo = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'statusantigo' field has been set.
+      * @return True if the 'statusantigo' field has been set, false otherwise.
+      */
+    public boolean hasStatusantigo() {
+      return fieldSetFlags()[8];
+    }
+
+
+    /**
+      * Clears the value of the 'statusantigo' field.
+      * @return This builder.
+      */
+    public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearStatusantigo() {
+      statusantigo = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'endereco' field.
       * @return The value.
       */
@@ -848,10 +994,10 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setEndereco(br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco value) {
-      validate(fields()[7], value);
+      validate(fields()[9], value);
       this.enderecoBuilder = null;
       this.endereco = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -860,7 +1006,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'endereco' field has been set, false otherwise.
       */
     public boolean hasEndereco() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[9];
     }
 
     /**
@@ -905,7 +1051,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearEndereco() {
       endereco = null;
       enderecoBuilder = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -924,9 +1070,9 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setInteresses(java.util.List<java.lang.CharSequence> value) {
-      validate(fields()[8], value);
+      validate(fields()[10], value);
       this.interesses = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -935,7 +1081,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'interesses' field has been set, false otherwise.
       */
     public boolean hasInteresses() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[10];
     }
 
 
@@ -945,7 +1091,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearInteresses() {
       interesses = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -964,9 +1110,9 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setInformacoesExtras(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
-      validate(fields()[9], value);
+      validate(fields()[11], value);
       this.informacoesExtras = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -975,7 +1121,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'informacoesExtras' field has been set, false otherwise.
       */
     public boolean hasInformacoesExtras() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[11];
     }
 
 
@@ -985,7 +1131,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearInformacoesExtras() {
       informacoesExtras = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1004,9 +1150,9 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setTipo(java.lang.Integer value) {
-      validate(fields()[10], value);
+      validate(fields()[12], value);
       this.tipo = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1015,7 +1161,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'tipo' field has been set, false otherwise.
       */
     public boolean hasTipo() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1025,7 +1171,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearTipo() {
       tipo = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1044,9 +1190,9 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return This builder.
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder setCPF(java.lang.CharSequence value) {
-      validate(fields()[11], value);
+      validate(fields()[13], value);
       this.CPF = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1055,7 +1201,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       * @return True if the 'CPF' field has been set, false otherwise.
       */
     public boolean hasCPF() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1065,7 +1211,7 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
       */
     public br.com.b3.poc.generate.avro.app.model.avro.meuregistro.MeuRegistro.Builder clearCPF() {
       CPF = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1081,6 +1227,8 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
         record.dataHoraCadastro = fieldSetFlags()[4] ? this.dataHoraCadastro : (java.time.Instant) defaultValue(fields()[4]);
         record.dataHoraUltimaAtualizacao = fieldSetFlags()[5] ? this.dataHoraUltimaAtualizacao : (java.time.Instant) defaultValue(fields()[5]);
         record.status = fieldSetFlags()[6] ? this.status : (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Status) defaultValue(fields()[6]);
+        record.statusnovo = fieldSetFlags()[7] ? this.statusnovo : (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo) defaultValue(fields()[7]);
+        record.statusantigo = fieldSetFlags()[8] ? this.statusantigo : (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.AtivoOuInativo) defaultValue(fields()[8]);
         if (enderecoBuilder != null) {
           try {
             record.endereco = this.enderecoBuilder.build();
@@ -1089,12 +1237,12 @@ public class MeuRegistro extends org.apache.avro.specific.SpecificRecordBase imp
             throw e;
           }
         } else {
-          record.endereco = fieldSetFlags()[7] ? this.endereco : (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco) defaultValue(fields()[7]);
+          record.endereco = fieldSetFlags()[9] ? this.endereco : (br.com.b3.poc.generate.avro.app.model.avro.meuregistro.Endereco) defaultValue(fields()[9]);
         }
-        record.interesses = fieldSetFlags()[8] ? this.interesses : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[8]);
-        record.informacoesExtras = fieldSetFlags()[9] ? this.informacoesExtras : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[9]);
-        record.tipo = fieldSetFlags()[10] ? this.tipo : (java.lang.Integer) defaultValue(fields()[10]);
-        record.CPF = fieldSetFlags()[11] ? this.CPF : (java.lang.CharSequence) defaultValue(fields()[11]);
+        record.interesses = fieldSetFlags()[10] ? this.interesses : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[10]);
+        record.informacoesExtras = fieldSetFlags()[11] ? this.informacoesExtras : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[11]);
+        record.tipo = fieldSetFlags()[12] ? this.tipo : (java.lang.Integer) defaultValue(fields()[12]);
+        record.CPF = fieldSetFlags()[13] ? this.CPF : (java.lang.CharSequence) defaultValue(fields()[13]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
